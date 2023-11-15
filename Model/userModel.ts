@@ -10,7 +10,7 @@ CREATE TABLE IF NOT EXISTS projects (
     ProjectId SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     description TEXT NOT NULL,
-    users JSON NOT NULL
+    users JSON 
 );
 
 CREATE TABLE IF NOT EXISTS assignments (
@@ -22,17 +22,14 @@ CREATE TABLE IF NOT EXISTS assignments (
     FOREIGN KEY (ProjectId) REFERENCES projects(ProjectId)
 );
 
-CREATE TABLE tasks(
+CREATE TABLE IF NOT EXISTS tasks (
     taskId SERIAL PRIMARY KEY,
-    
     ProjectId INT,
     StartTime TIMESTAMP,
     EndTime TIMESTAMP,
-    description VARCHAR,
+    description VARCHAR(255),
     FOREIGN KEY (ProjectId) REFERENCES projects(ProjectId)
-
 );
 
 
-  
 `;

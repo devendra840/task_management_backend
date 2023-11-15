@@ -6,7 +6,7 @@ import jwt from 'jsonwebtoken';
 const crypto = require('crypto');
 
 export const Register=async (req: Request, res: Response) => {
-    console.log(req.body);
+    
   
     try {
       const client = await pool.connect();

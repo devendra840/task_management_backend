@@ -7,8 +7,8 @@ const crypto = require('crypto');
 export const createProject=async (req: Request, res: Response) => {
     try {
       const { name, description, users } = req.body;
-      if (!name|| !users) {
-        return res.status(400).json({ error: 'Please provide name, description, and users' });
+      if (!name) {
+        return res.status(400).json({ error: 'Please provide name' });
       }
   
       const client = await pool.connect();
